@@ -1,0 +1,762 @@
+diff --git a/devel/guile-bytestructures/Makefile b/devel/guile-bytestructures/Makefile
+new file mode 100644
+index 000000000000..ef938ff1a21d
+--- /dev/null
++++ b/devel/guile-bytestructures/Makefile
+@@ -0,0 +1,13 @@
++PORTNAME=	guile-bytestructures
++DISTVERSION=	1.0.10
++CATEGORIES=	devel
++USE_GITHUB=	yes
++GH_ACCOUNT=	TaylanUB
++GH_PROJECT=	scheme-bytestructures
++BUILD_DEPENDS=	guile:lang/guile
++USES=		autoreconf pkgconfig
++GNU_CONFIGURE=	yes
++MAINTAINER=	no@na.me
++COMMENT=	Structured access to bytevector contents
++LICENSE=	GPLv3+
++.include <bsd.port.mk>
+diff --git a/devel/guile-bytestructures/distinfo b/devel/guile-bytestructures/distinfo
+new file mode 100644
+index 000000000000..c521b2544ce5
+--- /dev/null
++++ b/devel/guile-bytestructures/distinfo
+@@ -0,0 +1,3 @@
++TIMESTAMP = 1640672901
++SHA256 (TaylanUB-scheme-bytestructures-1.0.10_GH0.tar.gz) = 4902118f1114a790464b6ae73d83476541ac5fddc99a22f6d7cecb5f1b469728
++SIZE (TaylanUB-scheme-bytestructures-1.0.10_GH0.tar.gz) = 49337
+diff --git a/devel/guile-bytestructures/pkg-descr b/devel/guile-bytestructures/pkg-descr
+new file mode 100644
+index 000000000000..4263add7313b
+--- /dev/null
++++ b/devel/guile-bytestructures/pkg-descr
+@@ -0,0 +1,2 @@
++scheme-bytestructures
++This library offers a system imitating the type system of the C programming language, to be used on bytevectors.
+diff --git a/devel/guile-bytestructures/pkg-plist b/devel/guile-bytestructures/pkg-plist
+new file mode 100644
+index 000000000000..a0b1c4376bd8
+--- /dev/null
++++ b/devel/guile-bytestructures/pkg-plist
+@@ -0,0 +1,56 @@
++lib/guile/3.0/site-ccache/bytestructures/guile.go
++lib/guile/3.0/site-ccache/bytestructures/guile/base.go
++lib/guile/3.0/site-ccache/bytestructures/guile/bitfields.go
++lib/guile/3.0/site-ccache/bytestructures/guile/bytevectors.go
++lib/guile/3.0/site-ccache/bytestructures/guile/cstring-pointer.go
++lib/guile/3.0/site-ccache/bytestructures/guile/explicit-endianness.go
++lib/guile/3.0/site-ccache/bytestructures/guile/ffi.go
++lib/guile/3.0/site-ccache/bytestructures/guile/numeric-all.go
++lib/guile/3.0/site-ccache/bytestructures/guile/numeric-data-model.go
++lib/guile/3.0/site-ccache/bytestructures/guile/numeric-metadata.go
++lib/guile/3.0/site-ccache/bytestructures/guile/numeric.go
++lib/guile/3.0/site-ccache/bytestructures/guile/pointer.go
++lib/guile/3.0/site-ccache/bytestructures/guile/string.go
++lib/guile/3.0/site-ccache/bytestructures/guile/struct.go
++lib/guile/3.0/site-ccache/bytestructures/guile/union.go
++lib/guile/3.0/site-ccache/bytestructures/guile/utils.go
++lib/guile/3.0/site-ccache/bytestructures/guile/vector.go
++lib/guile/3.0/site-ccache/bytestructures/r6/bytevectors.go
++share/guile/site/3.0/bytestructures/body/align.scm
++share/guile/site/3.0/bytestructures/body/base.scm
++share/guile/site/3.0/bytestructures/body/base.syntactic.scm
++share/guile/site/3.0/bytestructures/body/bitfields.scm
++share/guile/site/3.0/bytestructures/body/explicit-endianness.scm
++share/guile/site/3.0/bytestructures/body/numeric.scm
++share/guile/site/3.0/bytestructures/body/string.scm
++share/guile/site/3.0/bytestructures/body/struct.scm
++share/guile/site/3.0/bytestructures/body/union.scm
++share/guile/site/3.0/bytestructures/body/utils.scm
++share/guile/site/3.0/bytestructures/body/vector.scm
++share/guile/site/3.0/bytestructures/guile.scm
++share/guile/site/3.0/bytestructures/guile/base.scm
++share/guile/site/3.0/bytestructures/guile/bitfields.scm
++share/guile/site/3.0/bytestructures/guile/bytevectors.scm
++share/guile/site/3.0/bytestructures/guile/cstring-pointer.scm
++share/guile/site/3.0/bytestructures/guile/explicit-endianness.scm
++share/guile/site/3.0/bytestructures/guile/ffi.scm
++share/guile/site/3.0/bytestructures/guile/numeric-all.scm
++share/guile/site/3.0/bytestructures/guile/numeric-data-model.scm
++share/guile/site/3.0/bytestructures/guile/numeric-metadata.scm
++share/guile/site/3.0/bytestructures/guile/numeric.scm
++share/guile/site/3.0/bytestructures/guile/pointer.scm
++share/guile/site/3.0/bytestructures/guile/string.scm
++share/guile/site/3.0/bytestructures/guile/struct.scm
++share/guile/site/3.0/bytestructures/guile/union.scm
++share/guile/site/3.0/bytestructures/guile/utils.scm
++share/guile/site/3.0/bytestructures/guile/vector.scm
++share/guile/site/3.0/bytestructures/r6/bytevectors.scm
++share/guile/site/3.0/bytestructures/r7/base.exports.sld
++share/guile/site/3.0/bytestructures/r7/bitfields.exports.sld
++share/guile/site/3.0/bytestructures/r7/explicit-endianness.exports.sld
++share/guile/site/3.0/bytestructures/r7/numeric-metadata.exports.sld
++share/guile/site/3.0/bytestructures/r7/numeric.exports.sld
++share/guile/site/3.0/bytestructures/r7/string.exports.sld
++share/guile/site/3.0/bytestructures/r7/struct.exports.sld
++share/guile/site/3.0/bytestructures/r7/union.exports.sld
++share/guile/site/3.0/bytestructures/r7/vector.exports.sld
+diff --git a/devel/guile-gcrypt/Makefile b/devel/guile-gcrypt/Makefile
+new file mode 100644
+index 000000000000..b1c1825348a3
+--- /dev/null
++++ b/devel/guile-gcrypt/Makefile
+@@ -0,0 +1,20 @@
++PORTNAME=	guile-gcrypt
++PORTVERSION=	0.2.0
++MASTER_SITES=	https://notabug.org/cwebber/guile-gcrypt/archive/
++DISTNAME=	0e67172e90
++CATEGORIES=	devel
++USES=		autoreconf sqlite:3 pkgconfig makeinfo
++GNU_CONFIGURE=	yes
++CONFIGURE_ARGS=	--with-libgcrypt-libdir=/usr/local/lib
++LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
++BUILD_DEPENDS=	guile:lang/guile
++MAINTAINER=	no@na.me
++COMMENT=	Guile-Gcrypt — Guile bindings to Libgcrypt
++LICENSE=	GPLv3+
++
++WRKSRC=         ${WRKDIR}/guile-gcrypt
++
++pre-configure:
++	        @cd ${WRKSRC} && ./bootstrap.sh
++
++.include <bsd.port.mk>
+diff --git a/devel/guile-gcrypt/distinfo b/devel/guile-gcrypt/distinfo
+new file mode 100644
+index 000000000000..30f93de4acd6
+--- /dev/null
++++ b/devel/guile-gcrypt/distinfo
+@@ -0,0 +1,3 @@
++TIMESTAMP = 1640697572
++SHA256 (0e67172e90.tar.gz) = 415b0e8abbb25a0ef811dfda238c600c7003973f0f51db640668a72094c1cfb9
++SIZE (0e67172e90.tar.gz) = 50993
+diff --git a/devel/guile-gcrypt/pkg-descr b/devel/guile-gcrypt/pkg-descr
+new file mode 100644
+index 000000000000..5f755db9f7a9
+--- /dev/null
++++ b/devel/guile-gcrypt/pkg-descr
+@@ -0,0 +1,3 @@
++Guile-Gcrypt provides a Guile 3.x/2.x interface to a subset of the
++GNU Libgcrypt crytographic library, which is itself used by the
++GNU Privacy Guard (GPG).
+diff --git a/devel/guile-gcrypt/pkg-plist b/devel/guile-gcrypt/pkg-plist
+new file mode 100644
+index 000000000000..6878b1d29fa1
+--- /dev/null
++++ b/devel/guile-gcrypt/pkg-plist
+@@ -0,0 +1,23 @@
++lib/guile/3.0/site-ccache/gcrypt/base16.go
++lib/guile/3.0/site-ccache/gcrypt/base64.go
++lib/guile/3.0/site-ccache/gcrypt/common.go
++lib/guile/3.0/site-ccache/gcrypt/hash.go
++lib/guile/3.0/site-ccache/gcrypt/hmac.go
++lib/guile/3.0/site-ccache/gcrypt/internal.go
++lib/guile/3.0/site-ccache/gcrypt/mac.go
++lib/guile/3.0/site-ccache/gcrypt/package-config.go
++lib/guile/3.0/site-ccache/gcrypt/pk-crypto.go
++lib/guile/3.0/site-ccache/gcrypt/random.go
++lib/guile/3.0/site-ccache/gcrypt/utils.go
++share/guile/site/3.0/gcrypt/base16.scm
++share/guile/site/3.0/gcrypt/base64.scm
++share/guile/site/3.0/gcrypt/common.scm
++share/guile/site/3.0/gcrypt/hash.scm
++share/guile/site/3.0/gcrypt/hmac.scm
++share/guile/site/3.0/gcrypt/internal.scm
++share/guile/site/3.0/gcrypt/mac.scm
++share/guile/site/3.0/gcrypt/package-config.scm
++share/guile/site/3.0/gcrypt/pk-crypto.scm
++share/guile/site/3.0/gcrypt/random.scm
++share/guile/site/3.0/gcrypt/utils.scm
++share/info/guile-gcrypt.info
+diff --git a/devel/guile-git/Makefile b/devel/guile-git/Makefile
+new file mode 100644
+index 000000000000..0bc33adf5f54
+--- /dev/null
++++ b/devel/guile-git/Makefile
+@@ -0,0 +1,17 @@
++PORTNAME=	guile-git
++DISTVERSION=	0.5.2
++CATEGORIES=	devel
++USE_GITLAB=	yes
++GL_COMMIT=	c5494ee3f7cdf891eb386f7103c86a962ab0ae62
++LIB_DEPENDS=	libgit2.so:devel/libgit2
++BUILD_DEPENDS=	guile:lang/guile ${LOCALBASE}/share/guile/site/3.0/bytestructures/guile.scm:devel/guile-bytestructures
++USES=		autoreconf pkgconfig makeinfo
++GNU_CONFIGURE=	yes
++MAINTAINER=	no@na.me
++COMMENT=	guile bindings of libgit2
++LICENSE=	GPLv3+
++
++pre-configure:
++	@cd ${WRKSRC} && ./bootstrap
++
++.include <bsd.port.mk>
+diff --git a/devel/guile-git/distinfo b/devel/guile-git/distinfo
+new file mode 100644
+index 000000000000..ecd11b3456a2
+--- /dev/null
++++ b/devel/guile-git/distinfo
+@@ -0,0 +1,3 @@
++TIMESTAMP = 1640683121
++SHA256 (guile-git-guile-git-c5494ee3f7cdf891eb386f7103c86a962ab0ae62_GL0.tar.gz) = 3a3118cc734e9d192ae42b70538dfd3f0bdcc1b8667d2318bdf95db62b586f44
++SIZE (guile-git-guile-git-c5494ee3f7cdf891eb386f7103c86a962ab0ae62_GL0.tar.gz) = 109515
+diff --git a/devel/guile-git/pkg-descr b/devel/guile-git/pkg-descr
+new file mode 100644
+index 000000000000..f98f55fdad6a
+--- /dev/null
++++ b/devel/guile-git/pkg-descr
+@@ -0,0 +1 @@
++Guile-Git is a GNU Guile library providing bindings to libgit2.
+diff --git a/devel/guile-git/pkg-plist b/devel/guile-git/pkg-plist
+new file mode 100644
+index 000000000000..a08e5d3faf47
+--- /dev/null
++++ b/devel/guile-git/pkg-plist
+@@ -0,0 +1,85 @@
++lib/guile/3.0/site-ccache/git.go
++lib/guile/3.0/site-ccache/git/annotated.go
++lib/guile/3.0/site-ccache/git/attr.go
++lib/guile/3.0/site-ccache/git/auth.go
++lib/guile/3.0/site-ccache/git/bindings.go
++lib/guile/3.0/site-ccache/git/blame.go
++lib/guile/3.0/site-ccache/git/blob.go
++lib/guile/3.0/site-ccache/git/branch.go
++lib/guile/3.0/site-ccache/git/checkout.go
++lib/guile/3.0/site-ccache/git/cherrypick.go
++lib/guile/3.0/site-ccache/git/clone.go
++lib/guile/3.0/site-ccache/git/commit.go
++lib/guile/3.0/site-ccache/git/config.go
++lib/guile/3.0/site-ccache/git/configuration.go
++lib/guile/3.0/site-ccache/git/cred.go
++lib/guile/3.0/site-ccache/git/describe.go
++lib/guile/3.0/site-ccache/git/diff.go
++lib/guile/3.0/site-ccache/git/errors.go
++lib/guile/3.0/site-ccache/git/fetch.go
++lib/guile/3.0/site-ccache/git/object.go
++lib/guile/3.0/site-ccache/git/oid.go
++lib/guile/3.0/site-ccache/git/reference.go
++lib/guile/3.0/site-ccache/git/remote.go
++lib/guile/3.0/site-ccache/git/repository.go
++lib/guile/3.0/site-ccache/git/reset.go
++lib/guile/3.0/site-ccache/git/rev-parse.go
++lib/guile/3.0/site-ccache/git/settings.go
++lib/guile/3.0/site-ccache/git/signature.go
++lib/guile/3.0/site-ccache/git/status.go
++lib/guile/3.0/site-ccache/git/structs.go
++lib/guile/3.0/site-ccache/git/submodule.go
++lib/guile/3.0/site-ccache/git/tag.go
++lib/guile/3.0/site-ccache/git/tree.go
++lib/guile/3.0/site-ccache/git/types.go
++lib/guile/3.0/site-ccache/git/web.go
++lib/guile/3.0/site-ccache/git/web/config.go
++lib/guile/3.0/site-ccache/git/web/html.go
++lib/guile/3.0/site-ccache/git/web/http.go
++lib/guile/3.0/site-ccache/git/web/mime-types.go
++lib/guile/3.0/site-ccache/git/web/querystring.go
++lib/guile/3.0/site-ccache/git/web/repository.go
++lib/guile/3.0/site-ccache/git/web/template.go
++share/guile/site/3.0/git.scm
++share/guile/site/3.0/git/annotated.scm
++share/guile/site/3.0/git/attr.scm
++share/guile/site/3.0/git/auth.scm
++share/guile/site/3.0/git/bindings.scm
++share/guile/site/3.0/git/blame.scm
++share/guile/site/3.0/git/blob.scm
++share/guile/site/3.0/git/branch.scm
++share/guile/site/3.0/git/checkout.scm
++share/guile/site/3.0/git/cherrypick.scm
++share/guile/site/3.0/git/clone.scm
++share/guile/site/3.0/git/commit.scm
++share/guile/site/3.0/git/config.scm
++share/guile/site/3.0/git/configuration.scm
++share/guile/site/3.0/git/cred.scm
++share/guile/site/3.0/git/describe.scm
++share/guile/site/3.0/git/diff.scm
++share/guile/site/3.0/git/errors.scm
++share/guile/site/3.0/git/fetch.scm
++share/guile/site/3.0/git/object.scm
++share/guile/site/3.0/git/oid.scm
++share/guile/site/3.0/git/reference.scm
++share/guile/site/3.0/git/remote.scm
++share/guile/site/3.0/git/repository.scm
++share/guile/site/3.0/git/reset.scm
++share/guile/site/3.0/git/rev-parse.scm
++share/guile/site/3.0/git/settings.scm
++share/guile/site/3.0/git/signature.scm
++share/guile/site/3.0/git/status.scm
++share/guile/site/3.0/git/structs.scm
++share/guile/site/3.0/git/submodule.scm
++share/guile/site/3.0/git/tag.scm
++share/guile/site/3.0/git/tree.scm
++share/guile/site/3.0/git/types.scm
++share/guile/site/3.0/git/web.scm
++share/guile/site/3.0/git/web/config.scm
++share/guile/site/3.0/git/web/html.scm
++share/guile/site/3.0/git/web/http.scm
++share/guile/site/3.0/git/web/mime-types.scm
++share/guile/site/3.0/git/web/querystring.scm
++share/guile/site/3.0/git/web/repository.scm
++share/guile/site/3.0/git/web/template.scm
++share/info/guile-git.info
+diff --git a/devel/guile-json/Makefile b/devel/guile-json/Makefile
+new file mode 100644
+index 000000000000..43dd34a9e779
+--- /dev/null
++++ b/devel/guile-json/Makefile
+@@ -0,0 +1,13 @@
++PORTNAME=	guile-json
++DISTVERSION=	4.5.2
++CATEGORIES=	devel
++MASTER_SITES=	https://download.savannah.nongnu.org/releases/guile-json/
++BUILD_DEPENDS=	guile:lang/guile
++COMMENT=	guile-json is a JSON module for Guile
++LICENSE=	GPLv3+
++USES=		autoreconf pkgconfig
++GNU_CONFIGURE=	yes
++MAINTAINER=	no@na.me
++LICENSE=	GPLv3+
++
++.include <bsd.port.mk>
+diff --git a/devel/guile-json/distinfo b/devel/guile-json/distinfo
+new file mode 100644
+index 000000000000..0ababf2f05bf
+--- /dev/null
++++ b/devel/guile-json/distinfo
+@@ -0,0 +1,3 @@
++TIMESTAMP = 1640689118
++SHA256 (guile-json-4.5.2.tar.gz) = 1ab046ec36b1c44c041ac275568d818784d71fab9a5d95f9128cfe8a25051933
++SIZE (guile-json-4.5.2.tar.gz) = 159925
+diff --git a/devel/guile-json/pkg-descr b/devel/guile-json/pkg-descr
+new file mode 100644
+index 000000000000..1424a73cee77
+--- /dev/null
++++ b/devel/guile-json/pkg-descr
+@@ -0,0 +1 @@
++guile-json is a JSON module for Guile. It supports parsing and building JSON documents according to the http:://json.org specification.
+diff --git a/devel/guile-json/pkg-plist b/devel/guile-json/pkg-plist
+new file mode 100644
+index 000000000000..0080c7cd7b2a
+--- /dev/null
++++ b/devel/guile-json/pkg-plist
+@@ -0,0 +1,8 @@
++lib/guile/3.0/site-ccache/json.go
++lib/guile/3.0/site-ccache/json/builder.go
++lib/guile/3.0/site-ccache/json/parser.go
++lib/guile/3.0/site-ccache/json/record.go
++share/guile/site/3.0/json.scm
++share/guile/site/3.0/json/builder.scm
++share/guile/site/3.0/json/parser.scm
++share/guile/site/3.0/json/record.scm
+diff --git a/devel/guile-lib/Makefile b/devel/guile-lib/Makefile
+index ab45eddf317a..18ad7e997bc8 100644
+--- a/devel/guile-lib/Makefile
++++ b/devel/guile-lib/Makefile
+@@ -1,8 +1,7 @@
+ # Created by: ijliao
+ 
+ PORTNAME=	guile-lib
+-PORTVERSION=	0.2.6.1
+-PORTREVISION=	2
++PORTVERSION=	0.2.7
+ CATEGORIES=	devel scheme
+ MASTER_SITES=	SAVANNAH
+ 
+@@ -14,8 +13,8 @@ LICENSE_COMB=	multi
+ 
+ BROKEN_armv7=		fails to compile: stack overflow
+ 
+-BUILD_DEPENDS=	guile2>0:lang/guile2
+-RUN_DEPENDS=	guile2>0:lang/guile2
++BUILD_DEPENDS=	guile>0:lang/guile
++RUN_DEPENDS=	guile>0:lang/guile
+ 
+ TEST_TARGET=	check
+ USES=		gmake pkgconfig
+diff --git a/devel/guile-lib/distinfo b/devel/guile-lib/distinfo
+index e7219abd864f..1ce8afda94d0 100644
+--- a/devel/guile-lib/distinfo
++++ b/devel/guile-lib/distinfo
+@@ -1,3 +1,3 @@
+-TIMESTAMP = 1534646549
+-SHA256 (guile-lib-0.2.6.1.tar.gz) = 6d1d3d0f14db9d280b8d427d6e1dec4417ddd02bff23bd5982ecb6e262eb3f2a
+-SIZE (guile-lib-0.2.6.1.tar.gz) = 427445
++TIMESTAMP = 1640702087
++SHA256 (guile-lib-0.2.7.tar.gz) = e4ef3b845f121882c7c0cf04f81a1cb8fd360c6f64b56b868de5546214f904de
++SIZE (guile-lib-0.2.7.tar.gz) = 451202
+diff --git a/devel/guile-lib/pkg-plist b/devel/guile-lib/pkg-plist
+index 17e390e3b663..1760f6fbb7fd 100644
+--- a/devel/guile-lib/pkg-plist
++++ b/devel/guile-lib/pkg-plist
+@@ -1,33 +1,33 @@
+-lib/guile-lib/guile/2.2/site-ccache/apicheck.go
+-lib/guile-lib/guile/2.2/site-ccache/compat/guile-2.go
+-lib/guile-lib/guile/2.2/site-ccache/config/load.go
+-lib/guile-lib/guile/2.2/site-ccache/container/async-queue.go
+-lib/guile-lib/guile/2.2/site-ccache/container/delay-tree.go
+-lib/guile-lib/guile/2.2/site-ccache/container/nodal-tree.go
+-lib/guile-lib/guile/2.2/site-ccache/debugging/assert.go
+-lib/guile-lib/guile/2.2/site-ccache/debugging/time.go
+-lib/guile-lib/guile/2.2/site-ccache/graph/topological-sort.go
+-lib/guile-lib/guile/2.2/site-ccache/htmlprag.go
+-lib/guile-lib/guile/2.2/site-ccache/io/string.go
+-lib/guile-lib/guile/2.2/site-ccache/logging/logger.go
+-lib/guile-lib/guile/2.2/site-ccache/logging/port-log.go
+-lib/guile-lib/guile/2.2/site-ccache/logging/rotating-log.go
+-lib/guile-lib/guile/2.2/site-ccache/match-bind.go
+-lib/guile-lib/guile/2.2/site-ccache/math/minima.go
+-lib/guile-lib/guile/2.2/site-ccache/math/primes.go
+-lib/guile-lib/guile/2.2/site-ccache/md5.go
+-lib/guile-lib/guile/2.2/site-ccache/os/process.go
+-lib/guile-lib/guile/2.2/site-ccache/scheme/documentation.go
+-lib/guile-lib/guile/2.2/site-ccache/scheme/kwargs.go
+-lib/guile-lib/guile/2.2/site-ccache/search/basic.go
+-lib/guile-lib/guile/2.2/site-ccache/string/completion.go
+-lib/guile-lib/guile/2.2/site-ccache/string/soundex.go
+-lib/guile-lib/guile/2.2/site-ccache/string/transform.go
+-lib/guile-lib/guile/2.2/site-ccache/string/wrap.go
+-lib/guile-lib/guile/2.2/site-ccache/term/ansi-color.go
+-lib/guile-lib/guile/2.2/site-ccache/texinfo/nodal-tree.go
+-lib/guile-lib/guile/2.2/site-ccache/text/parse-lalr.go
+-lib/guile-lib/guile/2.2/site-ccache/unit-test.go
++lib/guile-lib/guile/3.0/site-ccache/apicheck.go
++lib/guile-lib/guile/3.0/site-ccache/compat/guile-2.go
++lib/guile-lib/guile/3.0/site-ccache/config/load.go
++lib/guile-lib/guile/3.0/site-ccache/container/async-queue.go
++lib/guile-lib/guile/3.0/site-ccache/container/delay-tree.go
++lib/guile-lib/guile/3.0/site-ccache/container/nodal-tree.go
++lib/guile-lib/guile/3.0/site-ccache/debugging/assert.go
++lib/guile-lib/guile/3.0/site-ccache/debugging/time.go
++lib/guile-lib/guile/3.0/site-ccache/graph/topological-sort.go
++lib/guile-lib/guile/3.0/site-ccache/htmlprag.go
++lib/guile-lib/guile/3.0/site-ccache/io/string.go
++lib/guile-lib/guile/3.0/site-ccache/logging/logger.go
++lib/guile-lib/guile/3.0/site-ccache/logging/port-log.go
++lib/guile-lib/guile/3.0/site-ccache/logging/rotating-log.go
++lib/guile-lib/guile/3.0/site-ccache/match-bind.go
++lib/guile-lib/guile/3.0/site-ccache/math/minima.go
++lib/guile-lib/guile/3.0/site-ccache/math/primes.go
++lib/guile-lib/guile/3.0/site-ccache/md5.go
++lib/guile-lib/guile/3.0/site-ccache/os/process.go
++lib/guile-lib/guile/3.0/site-ccache/scheme/documentation.go
++lib/guile-lib/guile/3.0/site-ccache/scheme/kwargs.go
++lib/guile-lib/guile/3.0/site-ccache/search/basic.go
++lib/guile-lib/guile/3.0/site-ccache/string/completion.go
++lib/guile-lib/guile/3.0/site-ccache/string/soundex.go
++lib/guile-lib/guile/3.0/site-ccache/string/transform.go
++lib/guile-lib/guile/3.0/site-ccache/string/wrap.go
++lib/guile-lib/guile/3.0/site-ccache/term/ansi-color.go
++lib/guile-lib/guile/3.0/site-ccache/texinfo/nodal-tree.go
++lib/guile-lib/guile/3.0/site-ccache/text/parse-lalr.go
++lib/guile-lib/guile/3.0/site-ccache/unit-test.go
+ libdata/pkgconfig/guile-lib-1.0.pc
+ %%DATADIR%%/apicheck.scm
+ %%DATADIR%%/compat/guile-2.scm
+diff --git a/devel/guile-lzlib/Makefile b/devel/guile-lzlib/Makefile
+new file mode 100644
+index 000000000000..7f63abbe14bd
+--- /dev/null
++++ b/devel/guile-lzlib/Makefile
+@@ -0,0 +1,15 @@
++PORTNAME=	guile-lzlib
++PORTVERSION=	0.0.2
++MASTER_SITES=	https://notabug.org/guile-lzlib/guile-lzlib/archive/
++DISTNAME=	7a835a58d3
++CATEGORIES=	devel
++USES=		autoreconf pkgconfig
++GNU_CONFIGURE=	yes
++BUILD_DEPENDS=	guile:lang/guile
++MAINTAINER=	no@na.me
++COMMENT=	Guile-lzlib is a GNU Guile library providing bindings to lzlib
++LICENSE=	GPLv3+
++
++WRKSRC=         ${WRKDIR}/guile-lzlib
++
++.include <bsd.port.mk>
+diff --git a/devel/guile-lzlib/distinfo b/devel/guile-lzlib/distinfo
+new file mode 100644
+index 000000000000..84f07b00112b
+--- /dev/null
++++ b/devel/guile-lzlib/distinfo
+@@ -0,0 +1,3 @@
++TIMESTAMP = 1640704254
++SHA256 (7a835a58d3.tar.gz) = 8623db77d447e7b9ffbfcbc288390e706a6b1a89b1171daed60874cfec7e4f87
++SIZE (7a835a58d3.tar.gz) = 13291
+diff --git a/devel/guile-lzlib/pkg-descr b/devel/guile-lzlib/pkg-descr
+new file mode 100644
+index 000000000000..2378eed738a1
+--- /dev/null
++++ b/devel/guile-lzlib/pkg-descr
+@@ -0,0 +1 @@
++Guile-lzlib is a GNU Guile library providing bindings to lzlib.
+diff --git a/devel/guile-lzlib/pkg-plist b/devel/guile-lzlib/pkg-plist
+new file mode 100644
+index 000000000000..68c210e0689c
+--- /dev/null
++++ b/devel/guile-lzlib/pkg-plist
+@@ -0,0 +1,4 @@
++lib/guile/3.0/site-ccache/lzlib.go
++lib/guile/3.0/site-ccache/lzlib/config.go
++share/guile/site/3.0/lzlib.scm
++share/guile/site/3.0/lzlib/config.scm
+diff --git a/devel/guile-sqlite3/Makefile b/devel/guile-sqlite3/Makefile
+new file mode 100644
+index 000000000000..b792ee05b319
+--- /dev/null
++++ b/devel/guile-sqlite3/Makefile
+@@ -0,0 +1,17 @@
++PORTNAME=	guile-sqlite3
++PORTVERSION=	0.1.3
++#DISTVERSIONPREFIX=	v
++#DISTFILES=	v${DISTVERSION}${EXTRACT_SUFX}
++MASTER_SITES=	https://notabug.org/guile-sqlite3/guile-sqlite3/archive/
++DISTNAME=	011ee3c1cf
++CATEGORIES=	devel
++USES=		autoreconf sqlite:3 pkgconfig
++GNU_CONFIGURE=	yes
++BUILD_DEPENDS=	guile:lang/guile
++MAINTAINER=	no@na.me
++COMMENT=	Guile-SQLite3
++LICENSE=	GPLv3+
++
++WRKSRC=         ${WRKDIR}/guile-sqlite3
++
++.include <bsd.port.mk>
+diff --git a/devel/guile-sqlite3/distinfo b/devel/guile-sqlite3/distinfo
+new file mode 100644
+index 000000000000..1d4ec260b1bf
+--- /dev/null
++++ b/devel/guile-sqlite3/distinfo
+@@ -0,0 +1,3 @@
++TIMESTAMP = 1640694518
++SHA256 (011ee3c1cf.tar.gz) = 158cb82958c6329319f911412999ea125980f327f54185bf0dad271d6f8f45c2
++SIZE (011ee3c1cf.tar.gz) = 25017
+diff --git a/devel/guile-sqlite3/pkg-descr b/devel/guile-sqlite3/pkg-descr
+new file mode 100644
+index 000000000000..bb5964a83142
+--- /dev/null
++++ b/devel/guile-sqlite3/pkg-descr
+@@ -0,0 +1,3 @@
++This is Guile-SQLite3, Guile bindings for the
++[SQLite3](https://sqlite.org) database engine. The repository is at
++[notabug.org](https://notabug.org/civodul/guile-sqlite3)
+diff --git a/devel/guile-sqlite3/pkg-plist b/devel/guile-sqlite3/pkg-plist
+new file mode 100644
+index 000000000000..2ab35c492986
+--- /dev/null
++++ b/devel/guile-sqlite3/pkg-plist
+@@ -0,0 +1,2 @@
++lib/guile/3.0/site-ccache/sqlite3.go
++share/guile/site/3.0/sqlite3.scm
+diff --git a/devel/guile-zlib/Makefile b/devel/guile-zlib/Makefile
+new file mode 100644
+index 000000000000..5a240f1c27af
+--- /dev/null
++++ b/devel/guile-zlib/Makefile
+@@ -0,0 +1,15 @@
++PORTNAME=	guile-zlib
++PORTVERSION=	0.1.0
++MASTER_SITES=	https://notabug.org/guile-zlib/guile-zlib/archive/
++DISTNAME=	f843bd4a72
++CATEGORIES=	devel
++USES=		autoreconf pkgconfig
++GNU_CONFIGURE=	yes
++BUILD_DEPENDS=	guile:lang/guile
++MAINTAINER=	no@na.me
++COMMENT=	Guile-zlib is a GNU Guile library providing bindings to zlib
++LICENSE=	GPLv3+
++
++WRKSRC=         ${WRKDIR}/guile-zlib
++
++.include <bsd.port.mk>
+diff --git a/devel/guile-zlib/distinfo b/devel/guile-zlib/distinfo
+new file mode 100644
+index 000000000000..4289f573f58a
+--- /dev/null
++++ b/devel/guile-zlib/distinfo
+@@ -0,0 +1,3 @@
++TIMESTAMP = 1640703917
++SHA256 (f843bd4a72.tar.gz) = 25c726b570a06d21bc6fd7ec6093f377c749ce2efdd1d1516ac1b595f3f94ee9
++SIZE (f843bd4a72.tar.gz) = 14652
+diff --git a/devel/guile-zlib/pkg-descr b/devel/guile-zlib/pkg-descr
+new file mode 100644
+index 000000000000..e9fead9ebb9d
+--- /dev/null
++++ b/devel/guile-zlib/pkg-descr
+@@ -0,0 +1 @@
++Guile-zlib is a GNU Guile library providing bindings to zlib.
+diff --git a/devel/guile-zlib/pkg-plist b/devel/guile-zlib/pkg-plist
+new file mode 100644
+index 000000000000..b75aab0cf4b2
+--- /dev/null
++++ b/devel/guile-zlib/pkg-plist
+@@ -0,0 +1,4 @@
++lib/guile/3.0/site-ccache/zlib.go
++lib/guile/3.0/site-ccache/zlib/config.go
++share/guile/site/3.0/zlib.scm
++share/guile/site/3.0/zlib/config.scm
+diff --git a/devel/guix/Makefile b/devel/guix/Makefile
+new file mode 100644
+index 000000000000..d0c9768dea00
+--- /dev/null
++++ b/devel/guix/Makefile
+@@ -0,0 +1,34 @@
++PORTNAME=	guix
++DISTVERSION=	1.3.0
++CATEGORIES=	devel
++USE_GITHUB=	yes
++GH_ACCOUNT=	guix-mirror
++GH_TAGNAME=     v${DISTVERSION}
++BUILD_DEPENDS=	guile:lang/guile
++#		share/guile/site/3.0/git.scm:devel/guile-git \
++#		share/guile/site/3.0/json.scm:devel/guile-json \
++#		share/guile-lib/config/load.scm:devel/guile-lib \
++#		share/guile/site/3.0/lzlib.scm:devel/guile-lzlib \
++#		share/guile/site/3.0/sqlite3.scm:devel/guile-sqlite3 \
++#		share/guile/site/3.0/zlib.scm:devel/guile-zlib \
++#		include/argp.h:devel/argp-standalone
++#		po4a
++#		gnulib
++USES=		autoreconf gmake
++USE_GCC=	yes
++GNU_CONFIGURE=	yes
++CONFIGURE_ARGS= --with-courage \
++		--with-libgcrypt-libdir=/usr/local/lib \
++		--with-libintl-prefix=/usr/local \
++		--without-doc
++MAINTAINER=	no@na.me
++COMMENT=	GNU Guix is a purely functional package manager
++LICENSE=	GPLv3+
++
++pre-configure:
++#	@cd ${WRKSRC} && ./bootstrap
++#	rm -r ${WRKSRC}/doc
++#	@cd ${WRKSRC} && gnulib-tool --no-vc-files --import strverscmp
++#	@touch ${WRKSRC}/config.h.in
++
++.include <bsd.port.mk>
+diff --git a/devel/guix/distinfo b/devel/guix/distinfo
+new file mode 100644
+index 000000000000..8d7d1d3f8cfe
+--- /dev/null
++++ b/devel/guix/distinfo
+@@ -0,0 +1,3 @@
++TIMESTAMP = 1640706309
++SHA256 (guix-mirror-guix-1.3.0-v1.3.0_GH0.tar.gz) = 1d58596be86ca5f85034b40893ccc210f74df6f8d469affd8a479abfc4168f50
++SIZE (guix-mirror-guix-1.3.0-v1.3.0_GH0.tar.gz) = 21203846
+diff --git a/devel/guix/files/patch-Makefile.am b/devel/guix/files/patch-Makefile.am
+new file mode 100644
+index 000000000000..e68f3e90fd63
+--- /dev/null
++++ b/devel/guix/files/patch-Makefile.am
+@@ -0,0 +1,10 @@
++--- Makefile.am.orig	2021-12-30 15:57:08 UTC
+++++ Makefile.am
++@@ -708,7 +708,6 @@ as-derivation:
++ SUBDIRS = po/guix po/packages
++ BUILT_SOURCES =
++ 
++-include doc/local.mk
++ 
++ if BUILD_DAEMON
++ 
+diff --git a/devel/guix/files/patch-configure.ac b/devel/guix/files/patch-configure.ac
+new file mode 100644
+index 000000000000..f6f3886a4f04
+--- /dev/null
++++ b/devel/guix/files/patch-configure.ac
+@@ -0,0 +1,10 @@
++--- configure.ac.orig	2021-05-11 13:17:00 UTC
+++++ configure.ac
++@@ -3,7 +3,6 @@
++ 
++ AC_PREREQ([2.69])
++ AC_INIT([GNU Guix],
++-  [m4_esyscmd([build-aux/git-version-gen .tarball-version])],
++   [bug-guix@gnu.org], [guix],
++   [https://www.gnu.org/software/guix/])
++ AC_CONFIG_AUX_DIR([build-aux])
+diff --git a/devel/guix/files/patch-nix_local.mk b/devel/guix/files/patch-nix_local.mk
+new file mode 100644
+index 000000000000..b8b53682f748
+--- /dev/null
++++ b/devel/guix/files/patch-nix_local.mk
+@@ -0,0 +1,11 @@
++--- nix/local.mk.orig	2021-12-29 15:13:34 UTC
+++++ nix/local.mk
++@@ -131,7 +131,7 @@ guix_daemon_headers =				\
++ 
++ if HAVE_LIBBZ2
++ 
++-guix_daemon_LDADD += -lbz2
+++guix_daemon_LDADD += -lbz2 -lintl -largp
++ 
++ endif HAVE_LIBBZ2
++ 
+diff --git a/devel/guix/files/patch-nix_nix-daemon_nix-daemon.cc b/devel/guix/files/patch-nix_nix-daemon_nix-daemon.cc
+new file mode 100644
+index 000000000000..ed5d904e5b0e
+--- /dev/null
++++ b/devel/guix/files/patch-nix_nix-daemon_nix-daemon.cc
+@@ -0,0 +1,17 @@
++--- nix/nix-daemon/nix-daemon.cc.orig	2021-12-28 19:04:17 UTC
+++++ nix/nix-daemon/nix-daemon.cc
++@@ -899,12 +899,12 @@ static void acceptConnection(int fdSocket)
++ 
++ 	  /* If we're on a TCP connection, disable Nagle's algorithm so that
++ 	     data is sent as soon as possible.  */
++-	  (void) setsockopt(remote, SOL_TCP, TCP_NODELAY,
+++	  (void) setsockopt(remote, IPPROTO_TCP, TCP_NODELAY,
++ 			    &enabled, sizeof enabled);
++ 
++ #if defined(TCP_QUICKACK)
++ 	  /* Enable TCP quick-ack if applicable; this might help a little.  */
++-	  (void) setsockopt(remote, SOL_TCP, TCP_QUICKACK,
+++	  (void) setsockopt(remote, IPPROTO_TCP, TCP_QUICKACK,
++ 			    &enabled, sizeof enabled);
++ #endif
++ 	}
+diff --git a/devel/guix/pkg-descr b/devel/guix/pkg-descr
+new file mode 100644
+index 000000000000..6e36b143629f
+--- /dev/null
++++ b/devel/guix/pkg-descr
+@@ -0,0 +1 @@
++GNU Guix (IPA: ɡiːks) is a purely functional package manager, and associated free software distribution, for the GNU system. In addition to standard package management features, Guix supports transactional upgrades and roll-backs, unprivileged package management, per-user profiles, and garbage collection.
+diff --git a/security/gnutls/Makefile b/security/gnutls/Makefile
+index 945dddbe7aa9..d6a75642a53c 100644
+--- a/security/gnutls/Makefile
++++ b/security/gnutls/Makefile
+@@ -15,6 +15,8 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
+ 		libnettle.so:security/nettle \
+ 		libtasn1.so:security/libtasn1 \
+ 		libunistring.so:devel/libunistring
++LIB_DEPENDS+=	libguile-3.0.so:lang/guile
++LIB_DEPENDS+=	libgc-threaded.so:devel/boehm-gc-threaded
+ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
+ 
+ USES=		compiler:c11 cpe gmake iconv libtool localbase makeinfo \
+@@ -23,7 +25,7 @@ USE_LDCONFIG=	yes
+ 
+ CPE_VENDOR=	gnu
+ GNU_CONFIGURE=	yes
+-CONFIGURE_ARGS=	--disable-guile \
++CONFIGURE_ARGS=	--enable-guile \
+ 		--enable-local-libopts \
+ 		--with-system-priority-file=${PREFIX}/etc/gnutls/default-priorities \
+ 		--with-default-trust-store-file=${LOCALBASE}/share/certs/ca-root-nss.crt \
+diff --git a/security/gnutls/pkg-plist b/security/gnutls/pkg-plist
+index b64b615c428f..fcc9ec7a5696 100644
+--- a/security/gnutls/pkg-plist
++++ b/security/gnutls/pkg-plist
+@@ -1249,3 +1249,10 @@ share/info/pkcs11-vision.png
+ %%NLS%%share/locale/uk/LC_MESSAGES/gnutls.mo
+ %%NLS%%share/locale/vi/LC_MESSAGES/gnutls.mo
+ %%NLS%%share/locale/zh_CN/LC_MESSAGES/gnutls.mo
++share/guile/site/3.0/gnutls/extra.scm
++share/guile/site/3.0/gnutls.scm
++lib/guile/3.0/extensions/guile-gnutls-v-2.so.0.0.0
++lib/guile/3.0/extensions/guile-gnutls-v-2.so.0
++lib/guile/3.0/extensions/guile-gnutls-v-2.so
++lib/guile/3.0/site-ccache/gnutls.go
++lib/guile/3.0/site-ccache/gnutls/extra.go
